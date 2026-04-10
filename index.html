@@ -1,34 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     <title>Your personal website</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/style.css">
-
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
 
   <div id="overlayer"></div>
   <div class="loader">
@@ -37,9 +26,7 @@
     </div>
   </div>
 
-
   <div class="site-wrap">
-
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -49,19 +36,14 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
       <div class="container">
         <div class="row align-items-center">
-
           <div class="col-6 col-xl-2">
             <h1 class="mb-0 site-logo"><a href="#" class="h2 mb-0">Ian Falkenstrom</a></h1>
           </div>
-
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
-
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#about-section" class="nav-link">About</a></li>
                 <li><a href="#projects-section" class="nav-link">Projects</a></li>
@@ -69,25 +51,16 @@
               </ul>
             </nav>
           </div>
-
-
           <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
-
         </div>
       </div>
-
     </header>
-
-
-
 
     <div class="site-section cta-big-image border-bottom" id="about-section">
       <div class="container" style="padding-top: 30px">
         <div class="row">
           <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
-
             <img src="images/me.png" alt="Ian Falkenstrom" class="img-fluid">
-
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4">
@@ -98,20 +71,13 @@
                 Professionally, I am interested in software engineering and clean code practices. I am currently studying object oriented programming and collaborating on projects.
                </p>
                <p>
-                In my free time I enjoy surfing in San Diego.
+                 In my free time I enjoy surfing in San Diego.
                </p>
-
-
             </div>
-
-            
-
           </div>
         </div>
       </div>
     </div>
-
-
 
     <section class="site-section border-bottom" id="projects-section">
       <div class="container">
@@ -122,9 +88,7 @@
         </div>
         <div class="row">
           <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
-          
             <img src="images/paradox_results.png" alt="Birthday Paradox Results Table" class="img-fluid">
-          
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4">
@@ -143,19 +107,52 @@
               </p>
               <p>
               Throughout this project, I improved my skills in test driven development and learned how to use Intellij debugging tools to verify results and manage dependencies.</p>
-
-
             </div>
-
-            
-
           </div>
         </div>
       </div>
-      
-
     </section>
 
+    <section class="site-section border-bottom" id="elevator-project-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2 class="section-title mb-3" data-aos="fade-up">Elevator System Simulator</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mb-5" data-aos="fade-up">
+            <img src="images/elevator_sim.png" alt="Elevator Simulator Terminal Output" class="img-fluid mb-4">
+            <img src="images/elevator_uml.png" alt="Elevator System UML Diagram" class="img-fluid">
+            <p class="text-muted small text-center mt-2">Final implementation UML diagram showing class inheritance and relationships.</p>
+          </div>
+          <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-4">
+              <p>
+                The Elevator System Simulator is a Java-based application designed to model complex logistics within a high-rise building. The program simulates the behavior of specialized elevator types—Standard, Freight, Penthouse, and Express—as they navigate passenger calls across multiple floors in discrete rounds.
+              </p>
+              <h5>Functional Requirements</h5>
+              <p>
+                The system functions as a discrete-time engine that processes passenger requests from a data file. Each round, a scheduler assigns pending calls to the most appropriate elevator. Elevators must manage their own state (floor, direction, and load), account for idle time during pickups, and automatically return to the ground floor when inactive to maximize building efficiency.
+              </p>
+              <h5>Architecture & Design</h5>
+              <p>
+                I designed the system using an <strong>abstract Elevator class</strong> to enforce <em>Inheritance</em> and <em>Abstraction</em>, allowing specific elevators to override movement policies while sharing a common codebase. We strictly followed <strong>SOLID principles</strong>, specifically the <em>Open-Closed Principle</em>, by ensuring new elevator types could be added without modifying the core simulation logic. Using <em>Polymorphism</em>, our scheduler interacts with all elevator types through a unified interface, regardless of their unique internal rules.
+              </p>
+              <h5>My Implementation Role</h5>
+              <p>
+                I was personally responsible for developing the <strong>Simulator engine</strong>, the <strong>Scheduler interface</strong>, and both the <strong>Simple</strong> and <strong>Complex Scheduler</strong> implementations. My work on the <code>runSimulation</code> logic served as the project's "heartbeat," coordinating the movement of every unit. I utilized <strong>Test-Driven Development (TDD)</strong>, authoring a robust suite of JUnit tests for the <code>Simulator</code> class to verify complex edge cases, such as simultaneous pickups on the same floor.
+              </p>
+              <h5>Key Takeaways</h5>
+              <p>
+                This project reinforced the value of <strong>Interface-driven design</strong> and <strong>Agile collaboration</strong>. By defining the Scheduler as an interface early on, I was able to swap between basic and high-performance algorithms without disrupting my partner's elevator code. This experience significantly improved my proficiency with Git version control and clean code documentation.
+              </p>
+              <p><a href="https://github.com/ianfalkenstrom" class="btn btn-primary btn-sm" target="_blank">View Repository on GitHub</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="site-section" id="contact-section" data-aos="fade">
       <div class="container">
@@ -165,18 +162,12 @@
           </div>
         </div>
         <div class="row mb-5 text-center">
-
-
-
-          
-          
           <div class="col-md-12 text-center">
             <p class="mb-0">
               <span class="icon-mail_outline d-block h4 text-primary"></span>
               <span>ifalkenstrom@sandiego.edu</span>
             </p>
           </div>
-          
           <div class="col-md-12 text-center">
             <p class="mb-0">
               <span class="icon-graduation-cap d-block h4 text-primary"></span>
@@ -184,28 +175,19 @@
             </p>
           </div>
         </div>
-
       </div>
     </section>
 
-
     <footer class="site-footer">
       <div class="container">
-
           <div class="col-md-12 text-center">
             <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website builds on a template by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
-
           </div>
-
-
       </div>
     </footer>
-
-  </div> <!-- .site-wrap -->
+  </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
@@ -219,8 +201,6 @@
   <script src="js/jquery.sticky.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>
   <script src="js/collapsable.js"></script>
-
-
   <script src="js/main.js"></script>
 
   </body>
