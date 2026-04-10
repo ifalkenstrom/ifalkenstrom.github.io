@@ -130,16 +130,32 @@
             <div class="mb-4">
               <h5>Project Overview</h5>
               <p>
-                This project is a discrete round elevator simulation designed to model complex building logistics using Object Oriented Programming. The system manages four distinct elevator types including Standard, Express, Freight, and Penthouse models that each operate under unique movement and access constraints. To ensure maximum efficiency, the ComplexScheduler utilizes a two tiered assignment logic that prioritizes specialized elevators for their designated floors before falling back to Standard units.
+                This project is a discrete round elevator simulation designed to model complex building logistics through the lens of Object Oriented Programming. The system functions as a high level engine processing passenger requests across four distinct elevator models: Standard, Express, Freight, and Penthouse. Each unit operates under unique movement and access constraints, requiring a robust architecture to manage real time state transitions and floor restricted policies.
               </p>
-              <h5>Technical Design & SOLID Principles</h5>
+
+              <h5>Functional Requirements and Logic</h5>
               <p>
-                I utilized an <strong>abstract Elevator class</strong> to enforce a strict contract, requiring all subclasses to implement <code>getType()</code> and <code>getCapacity()</code>. This design adheres to SOLID principles by enabling the addition of new elevator types without modifying core simulation logic. To maintain a standard library only approach, all proximity logic and distance calculations were implemented using manual logic rather than external math utilities.
+                The simulation operates in discrete rounds to mimic realistic mechanical delays. Elevators move a maximum of one floor per round and must remain idle when picking up or dropping off passengers. Furthermore, if a unit needs to change direction, it incorporates an additional idle round to simulate the physical transition. The system follows a dynamic logic loop that remains active until every passenger call has been serviced and all elevator units have successfully returned to the ground floor lobby.
               </p>
-              <h5>Functional Logic</h5>
+
+              <h5>Technical Design and SOLID Principles</h5>
               <p>
-                Elevators move at most one floor per round and remain idle during pickups or direction changes to mimic realistic mechanical delays. The simulation runs dynamically until all calls are serviced and every unit has successfully returned to the ground floor lobby.
+                I designed the system architecture around an <strong>abstract Elevator class</strong> to define shared state while allowing specific subclasses to override behavior for unique policies. This design strictly adheres to SOLID principles, particularly the <strong>Open-Closed Principle</strong>, by enabling the seamless addition of new elevator types without modifying the core simulation engine. My design decisions focused on the four pillars of OOP, specifically using polymorphism to allow the scheduler to interact with any elevator type through a unified interface.
               </p>
+
+              <h5>Test-Driven Development (TDD) and Implementation Role</h5>
+              <p>
+                A central focus of my work on this project was the rigorous application of <strong>Test-Driven Development (TDD)</strong>. I prioritized a "test-first" workflow, authoring comprehensive JUnit test suites before implementing functional code. This process ensured that every component met strict requirements for reliability and edge case handling, such as simultaneous floor requests and capacity limits.
+              </p>
+              <p>
+                Professionally, I was responsible for implementing the <strong>Simulator engine</strong>, which serves as the central discrete-time controller, and the <strong>Scheduler architecture</strong>, including the core interface, the SimpleScheduler, and the ComplexScheduler. Additionally, I led the testing phase for these components, authoring rigorous test suites to verify mathematical accuracy in the proximity-based assignment logic.
+              </p>
+
+              <h5>Key Takeaways</h5>
+              <p>
+                Through this project, I significantly improved my ability to apply the Four Pillars of OOP to a complex, real-world system. Engaging deeply with TDD taught me the value of planning and verifying the reliability of scheduling algorithms before full integration. I gained practical experience in managing complex state transitions and utilizing GitHub for effective team collaboration and code reviews.
+              </p>
+              
               <p><a href="https://github.com/ianfalkenstrom" class="btn btn-primary btn-sm" target="_blank">View GitHub Repository</a></p>
             </div>
           </div>
