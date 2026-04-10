@@ -69,11 +69,11 @@
                I am a Computer Science student at the University of San Diego Shiley-Marcos School of Engineering. My academic focus is on building a strong foundation in software engineering and systems programming. 
               </p>
               <p>
-                Professionally, I am interested in computer architecture, clean code practices, and cybersecurity. I prioritize efficiency and simplicity in both my code and system configurations.
-               </p>
-               <p>
-                 In my free time, I am an avid surfer and enjoy being outdoors in San Diego.
-               </p>
+                 Professionally, I am interested in computer architecture, clean code practices, and cybersecurity. I prioritize efficiency and simplicity in both my code and system configurations.
+                </p>
+                <p>
+                  In my free time, I am an avid surfer and enjoy being outdoors in San Diego.
+                </p>
             </div>
           </div>
         </div>
@@ -125,24 +125,20 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6 mb-5" data-aos="fade-up">
-            <img src="images/elevator_sim.png" alt="Terminal Output" class="img-fluid mb-4 shadow">
-            <p class="text-muted small text-center">Terminal output showcasing the discrete-time simulation engine in action.</p>
-          </div>
-          <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4">
-              <h5>Project Logic & Requirements</h5>
+              <h5>Project Overview</h5>
               <p>
-                The system functions as a discrete-time engine processing passenger requests across Standard, Freight, Penthouse, and Express elevators. Elevators manage floor movement (1 floor per round), idle states during pickups, and direction changes, with an automated return to Floor 1 when inactive. The program is initialized via 7 command-line arguments to specify building parameters.
+                This project is a discrete round elevator simulation designed to model complex building logistics using Object Oriented Programming. The system manages four distinct elevator types including Standard, Express, Freight, and Penthouse models that each operate under unique movement and access constraints. To ensure maximum efficiency, the ComplexScheduler utilizes a two tiered assignment logic that prioritizes specialized elevators for their designated floors before falling back to Standard units.
               </p>
-              <h5>OOP Principles & Design</h5>
+              <h5>Technical Design & SOLID Principles</h5>
               <p>
-                I utilized an <strong>abstract Elevator class</strong> to define shared state while allowing subclasses to override <code>canAcceptCall()</code> for unique policies. This design adheres to <strong>SOLID principles</strong>—specifically the <strong>Open-Closed Principle</strong>—by enabling the addition of new elevator types without modifying core simulation logic. 
+                I utilized an <strong>abstract Elevator class</strong> to enforce a strict contract, requiring all subclasses to implement <code>getType()</code> and <code>getCapacity()</code>. This design adheres to SOLID principles by enabling the addition of new elevator types without modifying core simulation logic. To maintain a standard library only approach, all proximity logic and distance calculations were implemented using manual logic rather than external math utilities.
               </p>
-              <h5>My Implementation Role</h5>
+              <h5>Functional Logic</h5>
               <p>
-                I personally developed the <strong>Simulator engine</strong> and <strong>Scheduler interface</strong>. My <code>runSimulation</code> logic coordinated unit movements and real-time state output. I followed <strong>Test-Driven Development (TDD)</strong>, authoring JUnit tests to verify complex edge cases like simultaneous picks.
+                Elevators move at most one floor per round and remain idle during pickups or direction changes to mimic realistic mechanical delays. The simulation runs dynamically until all calls are serviced and every unit has successfully returned to the ground floor lobby.
               </p>
               <p><a href="https://github.com/ianfalkenstrom" class="btn btn-primary btn-sm" target="_blank">View GitHub Repository</a></p>
             </div>
