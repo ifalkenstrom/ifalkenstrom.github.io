@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Your personal website</title>
+    <title>Ian Falkenstrom | Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -46,7 +46,8 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#projects-section" class="nav-link">Projects</a></li>
+                <li><a href="#projects-section" class="nav-link">Birthday Paradox</a></li>
+                <li><a href="#elevator-project-section" class="nav-link">Elevator Sim</a></li>
                 <li><a href="#contact-section" class="nav-link">Contact</a></li>
               </ul>
             </nav>
@@ -59,19 +60,19 @@
     <div class="site-section cta-big-image border-bottom" id="about-section">
       <div class="container" style="padding-top: 30px">
         <div class="row">
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
-            <img src="images/me.png" alt="Ian Falkenstrom" class="img-fluid">
+          <div class="col-lg-6 mb-5" data-aos="fade-up">
+            <img src="images/me.png" alt="Ian Falkenstrom" class="img-fluid shadow">
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4">
               <p>
-               I am a Computer Science student at the <a href="https://www.sandiego.edu" target="_blank">University of San Diego</a>. I grew up in Davis, CA and am I excited to build my professional portfolio. 
+               I am a Computer Science student at the University of San Diego Shiley-Marcos School of Engineering. My academic focus is on building a strong foundation in software engineering and systems programming. 
               </p>
               <p>
-                Professionally, I am interested in software engineering and clean code practices. I am currently studying object oriented programming and collaborating on projects.
+                Professionally, I am interested in computer architecture, clean code practices, and cybersecurity. I prioritize efficiency and simplicity in both my code and system configurations.
                </p>
                <p>
-                 In my free time I enjoy surfing in San Diego.
+                 In my free time, I am an avid surfer and enjoy being outdoors in San Diego.
                </p>
             </div>
           </div>
@@ -83,30 +84,24 @@
       <div class="container">
         <div class="row mb-5 justify-content-center">
           <div class="col-md-8 text-center">
-            <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">Projects</h2>
+            <h2 class="section-title mb-3" data-aos="fade-up">Birthday Paradox Simulation</h2>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
-            <img src="images/paradox_results.png" alt="Birthday Paradox Results Table" class="img-fluid">
+          <div class="col-lg-6 mb-5" data-aos="fade-up">
+            <img src="images/paradox_results.png" alt="Birthday Paradox Simulation" class="img-fluid border shadow-sm">
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4">
-              <h3>The Birthday Paradox Simulation</h3>
               <p>
-               The Birthday Paradox explores the mathematical logic that in a room of just 23 people, there is a 50% chance that two people share a birthday.
+               This Java-based simulation explores the mathematical Birthday Paradox, which calculates the probability of shared birthdays within varying group sizes.
               </p>
               <p>
-              This project is a java application that simulates experiments for group sizes ranging from 5 to 100 people. Using a random birthday generator, the program runs 20 trials for each group size to calculate the percentage of shared birthdays and outputs the results in a formatted table.
+              The application runs experimental trials for groups of 5 to 100 people, utilizing a random generator to simulate birthdays and calculate shared-date percentages over 20 trials per group.
               </p>
               <p>
-              The project follows and object-oriented design consisting of four primary classes: Simulation, Experiment, Trial, and Birthday. This modular structure allows the Simulation class to manage the high-level logic and random number generation, while the Experiment class handles specific group sizes and trial counts. By separating these concerns, the code remains organized and follows clean code principles.  
+              Following clean code and TDD principles, I implemented modular classes for Simulation, Experiment, and Trial to maintain a clear separation of concerns and ensure mathematical accuracy.
               </p>
-              <p>
-              I was responsible for implementing the core simulation logic, including the Trial.java and Birthday.java classes. My partner and I followed clean code practices best we could and collaborated on the project via git version control.
-              </p>
-              <p>
-              Throughout this project, I improved my skills in test driven development and learned how to use Intellij debugging tools to verify results and manage dependencies.</p>
             </div>
           </div>
         </div>
@@ -120,34 +115,36 @@
             <h2 class="section-title mb-3" data-aos="fade-up">Elevator System Simulator</h2>
           </div>
         </div>
+
+        <div class="row mb-5 justify-content-center">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <a href="images/elevator_uml.png" data-fancybox="gallery" data-caption="Final implementation UML diagram showing class inheritance and relationships">
+              <img src="images/elevator_uml.png" alt="Elevator System UML Diagram" class="img-fluid border shadow-sm" style="max-height: 500px;">
+            </a>
+            <p class="text-muted small mt-2">Final implementation UML diagram showing class inheritance and relationships. (Click to enlarge)</p>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-lg-6 mb-5" data-aos="fade-up">
-            <img src="images/elevator_sim.png" alt="Elevator Simulator Terminal Output" class="img-fluid mb-4">
-            <img src="images/elevator_uml.png" alt="Elevator System UML Diagram" class="img-fluid">
-            <p class="text-muted small text-center mt-2">Final implementation UML diagram showing class inheritance and relationships.</p>
+            <img src="images/elevator_sim.png" alt="Terminal Output" class="img-fluid mb-4 shadow">
+            <p class="text-muted small text-center">Terminal output showcasing the discrete-time simulation engine in action.</p>
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4">
+              <h5>Project Logic & Requirements</h5>
               <p>
-                The Elevator System Simulator is a Java-based application designed to model complex logistics within a high-rise building. The program simulates the behavior of specialized elevator types—Standard, Freight, Penthouse, and Express—as they navigate passenger calls across multiple floors in discrete rounds.
+                The system functions as a discrete-time engine processing passenger requests across Standard, Freight, Penthouse, and Express elevators. Elevators manage floor movement (1 floor per round), idle states during pickups, and direction changes, with an automated return to Floor 1 when inactive. The program is initialized via 7 command-line arguments to specify building parameters.
               </p>
-              <h5>Functional Requirements</h5>
+              <h5>OOP Principles & Design</h5>
               <p>
-                The system functions as a discrete-time engine that processes passenger requests from a data file. Each round, a scheduler assigns pending calls to the most appropriate elevator. Elevators must manage their own state (floor, direction, and load), account for idle time during pickups, and automatically return to the ground floor when inactive to maximize building efficiency.
-              </p>
-              <h5>Architecture & Design</h5>
-              <p>
-                I designed the system using an <strong>abstract Elevator class</strong> to enforce <em>Inheritance</em> and <em>Abstraction</em>, allowing specific elevators to override movement policies while sharing a common codebase. We strictly followed <strong>SOLID principles</strong>, specifically the <em>Open-Closed Principle</em>, by ensuring new elevator types could be added without modifying the core simulation logic. Using <em>Polymorphism</em>, our scheduler interacts with all elevator types through a unified interface, regardless of their unique internal rules.
+                I utilized an <strong>abstract Elevator class</strong> to define shared state while allowing subclasses to override <code>canAcceptCall()</code> for unique policies. This design adheres to <strong>SOLID principles</strong>—specifically the <strong>Open-Closed Principle</strong>—by enabling the addition of new elevator types without modifying core simulation logic. 
               </p>
               <h5>My Implementation Role</h5>
               <p>
-                I was personally responsible for developing the <strong>Simulator engine</strong>, the <strong>Scheduler interface</strong>, and both the <strong>Simple</strong> and <strong>Complex Scheduler</strong> implementations. My work on the <code>runSimulation</code> logic served as the project's "heartbeat," coordinating the movement of every unit. I utilized <strong>Test-Driven Development (TDD)</strong>, authoring a robust suite of JUnit tests for the <code>Simulator</code> class to verify complex edge cases, such as simultaneous pickups on the same floor.
+                I personally developed the <strong>Simulator engine</strong> and <strong>Scheduler interface</strong>. My <code>runSimulation</code> logic coordinated unit movements and real-time state output. I followed <strong>Test-Driven Development (TDD)</strong>, authoring JUnit tests to verify complex edge cases like simultaneous picks.
               </p>
-              <h5>Key Takeaways</h5>
-              <p>
-                This project reinforced the value of <strong>Interface-driven design</strong> and <strong>Agile collaboration</strong>. By defining the Scheduler as an interface early on, I was able to swap between basic and high-performance algorithms without disrupting my partner's elevator code. This experience significantly improved my proficiency with Git version control and clean code documentation.
-              </p>
-              <p><a href="https://github.com/ianfalkenstrom" class="btn btn-primary btn-sm" target="_blank">View Repository on GitHub</a></p>
+              <p><a href="https://github.com/ianfalkenstrom" class="btn btn-primary btn-sm" target="_blank">View GitHub Repository</a></p>
             </div>
           </div>
         </div>
@@ -168,10 +165,10 @@
               <span>ifalkenstrom@sandiego.edu</span>
             </p>
           </div>
-          <div class="col-md-12 text-center">
+          <div class="col-md-12 text-center mt-3">
             <p class="mb-0">
-              <span class="icon-graduation-cap d-block h4 text-primary"></span>
-              <a href="images/resume.pdf" target="_blank">Resume</a>
+              <span class="icon-file-pdf-o d-block h4 text-primary"></span>
+              <a href="images/resume.pdf" target="_blank">View Resume (PDF)</a>
             </p>
           </div>
         </div>
@@ -179,12 +176,10 @@
     </section>
 
     <footer class="site-footer">
-      <div class="container">
-          <div class="col-md-12 text-center">
+      <div class="container text-center">
             <p>
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website builds on a template by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Ian Falkenstrom
             </p>
-          </div>
       </div>
     </footer>
   </div>
@@ -200,7 +195,6 @@
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>
-  <script src="js/collapsable.js"></script>
   <script src="js/main.js"></script>
 
   </body>
