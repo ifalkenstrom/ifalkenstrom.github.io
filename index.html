@@ -172,54 +172,33 @@
       </div>
     </div>
 
-   <a href="images/dcdraft_uml.png"
-   data-fancybox="gallery"
-   data-caption="D.C. Draft fantasy simulator concept">
+    <div class="row mb-5 justify-content-center">
+      <div class="col-12 text-center" data-aos="fade-up">
 
-  <img src="images/dcdraft_uml.png"
-       alt="D.C. Draft Fantasy Simulator"
-       class="img-fluid border shadow-sm"
-       style="max-height: 500px;">
+        <a href="images/dcdraft_uml.png.png"
+           data-fancybox="gallery"
+           data-caption="D.C. Draft UML Diagram">
 
-</a>
+          <img src="images/dcdraft_uml.png.png"
+               alt="D.C. Draft UML Diagram"
+               class="img-fluid border shadow-sm"
+               style="max-height: 700px;">
+
+        </a>
 
         <p class="text-muted small mt-2">
-          Fantasy football inspired congressional stock trading simulator.
+          UML diagram showing the architecture and object-oriented design of the
+          D.C. Draft fantasy simulation system.
         </p>
-      
 
-
-<div class="row mb-5 justify-content-center">
-  <div class="col-12 text-center" data-aos="fade-up">
-
-    <a href="images/dcdraft_uml.png"
-       data-fancybox="gallery"
-       data-caption="D.C. Draft UML Diagram">
-
-      <img src="images/dcdraft_uml.png"
-           alt="D.C. Draft UML Diagram"
-           class="img-fluid border shadow-sm"
-           style="max-height: 700px;">
-
-    </a>
-
-    <p class="text-muted small mt-2">
-      UML diagram showing the architecture and object-oriented design of the
-      D.C. Draft fantasy simulation system.
-    </p>
-
-  </div>
-</div>
+      </div>
+    </div>
 
     <div class="row justify-content-center">
-      <div class="col-lg-10"
-           data-aos="fade-up"
-           data-aos-delay="100">
-
+      <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
         <div class="mb-4">
 
           <h5>Project Overview</h5>
-
           <p>
             D.C. Draft is a Java simulation modeled after a traditional fantasy
             football league, but instead of drafting NFL players, users draft
@@ -236,119 +215,69 @@
           </p>
 
           <h5>Motivation</h5>
-
           <p>
-            We decided to build this project because it combined multiple
-            interesting areas into one application: fantasy sports systems,
-            public congressional trading disclosures, and object-oriented
-            software engineering. Congressional stock trading data is publicly
-            available but difficult to analyze directly, so we wanted to create
-            a system that transformed raw trade data into a competitive fantasy
-            simulation that was both technically challenging and engaging to
-            use.
+            We decided to build this project because it combined fantasy sports
+            systems, public congressional trading disclosures, and
+            object-oriented software engineering. Congressional stock trading
+            data is publicly available but difficult to analyze directly, so we
+            wanted to transform raw trade data into a competitive fantasy
+            simulation.
           </p>
 
           <h5>Functional Requirements</h5>
-
           <p>
-            The program runs through four major phases. First, the system loads
-            congressional trading data from CSV files and builds a collection of
-            Politician objects, each associated with a TradeHistory containing
-            reported stock transactions.
+            The program loads congressional trading data from CSV files and
+            builds Politician objects connected to TradeHistory records. Users
+            then participate in a snake-style fantasy draft where the draft
+            order reverses each round for fairness.
           </p>
 
           <p>
-            Users then participate in a snake-style fantasy draft where the
-            draft order reverses every round to ensure fairness. Politicians may
-            only belong to one team, and drafting continues until every roster
-            is complete.
-          </p>
-
-          <p>
-            Once drafting finishes, the season simulation begins. Every team
-            plays weekly matchups against other teams. Politicians are scored
-            using a ScoringStrategy implementation that estimates trading profit
-            during a given period. Team scores are calculated by summing the
-            scores of every politician on the roster.
-          </p>
-
-          <p>
-            Match winners update season standings, weekly MVPs are identified,
-            and final standings determine the season champion.
+            After drafting, teams compete in weekly matchups. Politicians are
+            scored using a ScoringStrategy that estimates trading profit during
+            each period. Team scores are calculated by summing the scores of
+            drafted politicians. Match winners update standings, MVPs are
+            identified, and the best final record wins the season.
           </p>
 
           <h5>Technical Design and OOP Principles</h5>
-
           <p>
-            The system was designed around strong object-oriented programming
-            principles and SOLID architecture. Each class has a clearly defined
-            responsibility. Trade represents a single transaction,
-            TradeHistory manages collections of trades, Politician combines
-            identity and trading information, Team manages drafted politicians,
-            Match evaluates weekly competition, and Season manages overall
-            league progression.
+            The system was designed around object-oriented programming and SOLID
+            principles. Trade represents one transaction, TradeHistory manages
+            collections of trades, Politician connects identity information with
+            trade data, Team manages drafted politicians, Match evaluates weekly
+            competition, and Season manages league progression.
           </p>
 
           <p>
-            Abstraction and polymorphism are primarily implemented through the
-            ScoringStrategy interface. Team and Match classes do not need to
-            understand how scoring calculations work internally. Instead, they
-            depend only on the shared scoring contract. This allows additional
-            scoring systems to be added later without modifying the core
-            simulation engine.
-          </p>
-
-          <p>
-            Encapsulation is used heavily throughout the project. Internal data
-            structures are protected through getters, defensive copying, and
-            restricted access to mutable state. Static analysis tools including
-            Checkstyle and SpotBugs were used to maintain code quality and
-            enforce defensive programming practices.
-          </p>
-
-          <p>
-            The project was implemented entirely in Java using object-oriented
-            design patterns, GitHub pull requests, unit testing, and
-            collaborative branch workflows.
+            The ScoringStrategy interface allows scoring systems to be changed
+            without rewriting the main simulation logic. This uses abstraction
+            and polymorphism so Team and Match depend on a general scoring
+            contract rather than one specific scoring formula.
           </p>
 
           <h5>Design Assumptions</h5>
-
           <p>
-            Several assumptions were necessary during development. Congressional
-            disclosures often provide trade values as ranges rather than exact
-            values, so midpoint estimates are used for initial profit
-            calculations.
-          </p>
-
-          <p>
-            Trades are grouped into simulated weekly intervals so that matchup
-            scoring remains consistent across the season. The project also
-            focuses only on stock transactions instead of additional asset types
-            such as crypto or options in order to simplify the scoring engine.
-          </p>
-
-          <p>
-            We specifically selected a snake draft format because it prevents a
-            single team from maintaining a constant drafting advantage across
-            every round.
+            Congressional disclosures often report trade amounts as ranges, so
+            the project uses estimated midpoint values for scoring. Trades are
+            grouped into simulated weeks to make matchup scoring consistent.
+            The first version focuses on stock transactions rather than other
+            asset types to keep the scoring system manageable.
           </p>
 
           <h5>My Implementation Role</h5>
-
           <p>
             My primary contributions included implementing and testing the Team
             class, weekly scoring functionality, matchup calculations, and
-            portfolio profit strategy logic. I also worked extensively with
-            GitHub collaboration workflows including branching, pull requests,
-            merge conflict resolution, CI build validation, Checkstyle fixes,
-            and SpotBugs debugging.
+            portfolio profit strategy logic. I also worked with GitHub pull
+            requests, merge conflict resolution, CI build validation,
+            Checkstyle fixes, and SpotBugs debugging.
           </p>
 
           <p>
-            Through this project, I significantly improved my experience with
+            Through this project, I improved my experience with
             object-oriented architecture, test-driven development, defensive
-            programming, and maintaining scalable Java systems within a team
+            programming, and maintaining scalable Java systems in a team
             environment.
           </p>
 
@@ -363,6 +292,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
