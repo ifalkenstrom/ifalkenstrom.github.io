@@ -48,6 +48,7 @@
                 <li><a href="#about-section" class="nav-link">About</a></li>
                 <li><a href="#projects-section" class="nav-link">Birthday Paradox</a></li>
                 <li><a href="#elevator-project-section" class="nav-link">Elevator Sim</a></li>
+                <li><a href="#dc-draft-section" class="nav-link">D.C. Draft</a></li>
                 <li><a href="#contact-section" class="nav-link">Contact</a></li>
               </ul>
             </nav>
@@ -159,6 +160,209 @@
         </div>
       </div>
     </section>
+
+    <section class="site-section border-bottom" id="dc-draft-section">
+  <div class="container">
+
+    <div class="row mb-5 justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2 class="section-title mb-3" data-aos="fade-up">
+          D.C. Draft Fantasy Simulator
+        </h2>
+      </div>
+    </div>
+
+    <div class="row mb-5 justify-content-center">
+      <div class="col-12 text-center" data-aos="fade-up">
+        <a href="images/dcdraft.png"
+           data-fancybox="gallery"
+           data-caption="D.C. Draft fantasy simulator concept">
+          <img src="images/dcdraft.png"
+               alt="D.C. Draft Fantasy Simulator"
+               class="img-fluid border shadow-sm"
+               style="max-height: 500px;">
+        </a>
+
+        <p class="text-muted small mt-2">
+          Fantasy football inspired congressional stock trading simulator.
+        </p>
+        </a>
+   
+
+
+<div class="row mb-5 justify-content-center">
+  <div class="col-12 text-center" data-aos="fade-up">
+
+    <img src="images/dcdraft_uml.png"
+         alt="D.C. Draft UML Diagram"
+         class="img-fluid border shadow-sm"
+         style="max-height: 700px;">
+
+    <p class="text-muted small mt-2">
+      UML diagram showing the architecture and object-oriented design of the
+      D.C. Draft fantasy simulation system.
+    </p>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10"
+           data-aos="fade-up"
+           data-aos-delay="100">
+
+        <div class="mb-4">
+
+          <h5>Project Overview</h5>
+
+          <p>
+            D.C. Draft is a Java simulation modeled after a traditional fantasy
+            football league, but instead of drafting NFL players, users draft
+            members of the United States Congress. Rather than scoring points
+            from football statistics, politicians score points based on the
+            estimated performance of their disclosed stock trades.
+          </p>
+
+          <p>
+            Each user drafts a roster of politicians and competes against other
+            teams throughout a simulated season. Weekly scores are generated
+            using each politician’s trading activity, and the team with the
+            strongest overall season record becomes champion.
+          </p>
+
+          <h5>Motivation</h5>
+
+          <p>
+            We decided to build this project because it combined multiple
+            interesting areas into one application: fantasy sports systems,
+            public congressional trading disclosures, and object-oriented
+            software engineering. Congressional stock trading data is publicly
+            available but difficult to analyze directly, so we wanted to create
+            a system that transformed raw trade data into a competitive fantasy
+            simulation that was both technically challenging and engaging to
+            use.
+          </p>
+
+          <h5>Functional Requirements</h5>
+
+          <p>
+            The program runs through four major phases. First, the system loads
+            congressional trading data from CSV files and builds a collection of
+            Politician objects, each associated with a TradeHistory containing
+            reported stock transactions.
+          </p>
+
+          <p>
+            Users then participate in a snake-style fantasy draft where the
+            draft order reverses every round to ensure fairness. Politicians may
+            only belong to one team, and drafting continues until every roster
+            is complete.
+          </p>
+
+          <p>
+            Once drafting finishes, the season simulation begins. Every team
+            plays weekly matchups against other teams. Politicians are scored
+            using a ScoringStrategy implementation that estimates trading profit
+            during a given period. Team scores are calculated by summing the
+            scores of every politician on the roster.
+          </p>
+
+          <p>
+            Match winners update season standings, weekly MVPs are identified,
+            and final standings determine the season champion.
+          </p>
+
+          <h5>Technical Design and OOP Principles</h5>
+
+          <p>
+            The system was designed around strong object-oriented programming
+            principles and SOLID architecture. Each class has a clearly defined
+            responsibility. Trade represents a single transaction,
+            TradeHistory manages collections of trades, Politician combines
+            identity and trading information, Team manages drafted politicians,
+            Match evaluates weekly competition, and Season manages overall
+            league progression.
+          </p>
+
+          <p>
+            Abstraction and polymorphism are primarily implemented through the
+            ScoringStrategy interface. Team and Match classes do not need to
+            understand how scoring calculations work internally. Instead, they
+            depend only on the shared scoring contract. This allows additional
+            scoring systems to be added later without modifying the core
+            simulation engine.
+          </p>
+
+          <p>
+            Encapsulation is used heavily throughout the project. Internal data
+            structures are protected through getters, defensive copying, and
+            restricted access to mutable state. Static analysis tools including
+            Checkstyle and SpotBugs were used to maintain code quality and
+            enforce defensive programming practices.
+          </p>
+
+          <p>
+            The project was implemented entirely in Java using object-oriented
+            design patterns, GitHub pull requests, unit testing, and
+            collaborative branch workflows.
+          </p>
+
+          <h5>Design Assumptions</h5>
+
+          <p>
+            Several assumptions were necessary during development. Congressional
+            disclosures often provide trade values as ranges rather than exact
+            values, so midpoint estimates are used for initial profit
+            calculations.
+          </p>
+
+          <p>
+            Trades are grouped into simulated weekly intervals so that matchup
+            scoring remains consistent across the season. The project also
+            focuses only on stock transactions instead of additional asset types
+            such as crypto or options in order to simplify the scoring engine.
+          </p>
+
+          <p>
+            We specifically selected a snake draft format because it prevents a
+            single team from maintaining a constant drafting advantage across
+            every round.
+          </p>
+
+          <h5>My Implementation Role</h5>
+
+          <p>
+            My primary contributions included implementing and testing the Team
+            class, weekly scoring functionality, matchup calculations, and
+            portfolio profit strategy logic. I also worked extensively with
+            GitHub collaboration workflows including branching, pull requests,
+            merge conflict resolution, CI build validation, Checkstyle fixes,
+            and SpotBugs debugging.
+          </p>
+
+          <p>
+            Through this project, I significantly improved my experience with
+            object-oriented architecture, test-driven development, defensive
+            programming, and maintaining scalable Java systems within a team
+            environment.
+          </p>
+
+          <p>
+            <a href="https://github.com/ianfalkenstrom"
+               class="btn btn-primary btn-sm"
+               target="_blank">
+              View GitHub Repository
+            </a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="site-section" id="contact-section" data-aos="fade">
       <div class="container">
